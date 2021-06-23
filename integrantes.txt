@@ -1,2 +1,3 @@
-Aluno: Lucas Negresiolo  Libório 	17.01165-5		Aluno: Lucas Martins Coelho 	15.03863-7
-Aluno: Enricco Diniz 		17.00165-0
+Aluno: Lucas Negresiolo Libório 	17.01165-5		
+Aluno: Lucas Martins Coelho 	15.03863-7
+Aluno: Enricco Diniz Leite do Amaral		17.00165-0
