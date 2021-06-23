@@ -1,8 +1,7 @@
-package com.fasecovidsp.getUpdates.models;
+package com.fasecovidsp.userHandler.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity

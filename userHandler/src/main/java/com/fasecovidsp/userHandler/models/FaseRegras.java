@@ -1,7 +1,6 @@
-package com.fasecovidsp.getUpdates.models;
+package com.fasecovidsp.userHandler.models;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class FaseRegras {

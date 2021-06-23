@@ -1,4 +1,4 @@
-package com.fasecovidsp.getUpdates.models;
+package com.fasecovidsp.userHandler.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

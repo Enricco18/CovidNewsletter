@@ -1,37 +1,42 @@
-package com.fasecovidsp.getUpdates;
+package com.fasecovidsp.getUpdates.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class Regras {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date dataCorrida;
-    private String comercialActivities;
-    private String religiousActivities;
-    private String restaurantActivities;
-    private String culturalActivities;
-    private String sportsActivities;
-    private String beautySalonsActivities;
-    private String recomendations;
+    private LocalDate dataCorrida;
 
-    public Regras() {
+    @ManyToOne
+    private Municipio municipio;
+
+    @ManyToOne
+    private FaseRegras fase;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Regras regras = (Regras) o;
+        return Objects.equals(municipio, regras.municipio)
+                && Objects.equals(fase.getComercialActivities(), regras.fase.getComercialActivities())
+                && Objects.equals(fase.getReligiousActivities(), regras.fase.getReligiousActivities())
+                && Objects.equals(fase.getRestaurantActivities(), regras.fase.getRestaurantActivities())
+                && Objects.equals(fase.getCulturalActivities(), regras.fase.getCulturalActivities())
+                && Objects.equals(fase.getSportsActivities(), regras.fase.getSportsActivities())
+                && Objects.equals(fase.getBeautySalonsActivities(), regras.fase.getBeautySalonsActivities())
+                && Objects.equals(fase.getRecomendations(), regras.fase.getRecomendations())
+                ;
     }
 
-    public Regras(Date dataCorrida, String comercialActivities, String religiousActivities, String restaurantActivities, String culturalActivities, String sportsActivities, String beautySalonsActivities, String recomendations) {
-        this.dataCorrida = dataCorrida;
-        this.comercialActivities = comercialActivities;
-        this.religiousActivities = religiousActivities;
-        this.restaurantActivities = restaurantActivities;
-        this.culturalActivities = culturalActivities;
-        this.sportsActivities = sportsActivities;
-        this.beautySalonsActivities = beautySalonsActivities;
-        this.recomendations = recomendations;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataCorrida, municipio, fase);
     }
 
     public Long getId() {
@@ -42,67 +47,27 @@ public class Regras {
         this.id = id;
     }
 
-    public Date getDataCorrida() {
+    public LocalDate getDataCorrida() {
         return dataCorrida;
     }
 
-    public void setDataCorrida(Date dataCorrida) {
+    public void setDataCorrida(LocalDate dataCorrida) {
         this.dataCorrida = dataCorrida;
     }
 
-    public String getComercialActivities() {
-        return comercialActivities;
+    public Municipio getMunicipio() {
+        return municipio;
     }
 
-    public void setComercialActivities(String comercialActivities) {
-        this.comercialActivities = comercialActivities;
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
     }
 
-    public String getReligiousActivities() {
-        return religiousActivities;
+    public FaseRegras getFase() {
+        return fase;
     }
 
-    public void setReligiousActivities(String religiousActivities) {
-        this.religiousActivities = religiousActivities;
-    }
-
-    public String getRestaurantActivities() {
-        return restaurantActivities;
-    }
-
-    public void setRestaurantActivities(String restaurantActivities) {
-        this.restaurantActivities = restaurantActivities;
-    }
-
-    public String getCulturalActivities() {
-        return culturalActivities;
-    }
-
-    public void setCulturalActivities(String culturalActivities) {
-        this.culturalActivities = culturalActivities;
-    }
-
-    public String getSportsActivities() {
-        return sportsActivities;
-    }
-
-    public void setSportsActivities(String sportsActivities) {
-        this.sportsActivities = sportsActivities;
-    }
-
-    public String getBeautySalonsActivities() {
-        return beautySalonsActivities;
-    }
-
-    public void setBeautySalonsActivities(String beautySalonsActivities) {
-        this.beautySalonsActivities = beautySalonsActivities;
-    }
-
-    public String getRecomendations() {
-        return recomendations;
-    }
-
-    public void setRecomendations(String recomendations) {
-        this.recomendations = recomendations;
+    public void setFase(FaseRegras fase) {
+        this.fase = fase;
     }
 }

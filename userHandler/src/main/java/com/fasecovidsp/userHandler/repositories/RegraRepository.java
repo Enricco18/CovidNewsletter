@@ -1,6 +1,6 @@
-package com.fasecovidsp.getUpdates.repositories;
+package com.fasecovidsp.userHandler.repositories;
 
-import com.fasecovidsp.getUpdates.models.Regras;
+import com.fasecovidsp.userHandler.models.Regras;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -10,8 +10,7 @@ import org.springframework.stereotype.Component;
 //O spring irá criar esses métodos que lançaram os eventos com tais nomes
 @Component
 public interface CovidRulesProcessor {
-    String NEW_AGE = "new-age";
-    String NEW_PHASE = "new-phase";
+    String GET_RULES = "get-phase";
     String NEW_RULES = "new-rules";
 
     // Código pra se inscrever em um topic e receber esses eventos
@@ -19,11 +18,6 @@ public interface CovidRulesProcessor {
   //  SubscribableChannel sourceOfLoanApplications();
 
     //Código para mandar os eventos
-    @Output(NEW_AGE)
-    MessageChannel ageUpdate();
-
-    @Output(NEW_PHASE)
-    MessageChannel phaseUpdate();
 
     @Output(NEW_RULES)
     MessageChannel rulesUpdate();

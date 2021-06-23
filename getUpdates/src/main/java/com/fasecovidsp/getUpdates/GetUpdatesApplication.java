@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //Aplicação que irá pegar os updates de covid
 @SpringBootApplication
 @EnableScheduling
-//@EnableBinding(CovidRulesProcessor.class)
+@EnableBinding(CovidRulesProcessor.class)
 public class GetUpdatesApplication {
 
 	public static void main(String[] args) {
